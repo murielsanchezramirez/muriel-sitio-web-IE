@@ -155,6 +155,54 @@ nav a.active {
   background: var(--celeste);
 }
 
+/* Grid para la sección Sitio Web */
+#sitio-web .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+/* iframes */
+#sitio-web iframe {
+  width: 100%;
+  height: 300px; /* puedes ajustar a 350px o 400px si quieres más alto */
+  border: none;
+  border-radius: 8px;
+}
+
+/* Tarjetas específicas para la sección Sitio Web */
+#sitio-web .card {
+  background: var(--azul);   /* Fondo azul oscuro */
+  color: var(--blanco);            /* Texto blanco */
+  border-radius: var(--radius);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: var(--trans);
+}
+
+#sitio-web .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+#sitio-web .card-body h3 {
+  color: var(--blanco); /* Título en celeste para contraste */
+}
+
+#sitio-web .card-body p {
+  color: var(--gris); /* Texto en gris claro */
+}
+
+#sitio-web .btn {
+  background: var(--azul-oscuro); /* Botón en azul intermedio */
+  color: var(--blanco);
+}
+
+#sitio-web .btn:hover {
+  background: var(--celeste); /* Botón cambia a celeste */
+}
+
+
 /* Footer */
 footer {
   background: var(--azul-oscuro);
