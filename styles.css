@@ -165,15 +165,15 @@ nav a.active {
 /* iframes */
 #sitio-web iframe {
   width: 100%;
-  height: 300px; /* puedes ajustar a 350px o 400px si quieres más alto */
+  height: 300px; 
   border: none;
   border-radius: 8px;
 }
 
 /* Tarjetas específicas para la sección Sitio Web */
 #sitio-web .card {
-  background: var(--azul);   /* Fondo azul oscuro */
-  color: var(--blanco);            /* Texto blanco */
+  background: var(--azul);   
+  color: var(--blanco);            
   border-radius: var(--radius);
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
   overflow: hidden;
@@ -186,21 +186,22 @@ nav a.active {
 }
 
 #sitio-web .card-body h3 {
-  color: var(--blanco); /* Título en celeste para contraste */
+  color: var(--blanco); 
 }
 
 #sitio-web .card-body p {
-  color: var(--gris); /* Texto en gris claro */
+  color: var(--gris); 
 }
 
 #sitio-web .btn {
-  background: var(--azul-oscuro); /* Botón en azul intermedio */
+  background: var(--azul-oscuro); 
   color: var(--blanco);
 }
 
 #sitio-web .btn:hover {
-  background: var(--celeste); /* Botón cambia a celeste */
+  background: var(--celeste); 
 }
+
 
 
 /* Footer */
