@@ -97,87 +97,113 @@ nav a.active {
   margin: 3rem 0 2rem;
 }
 
-/* Grid de trabajos */
-.grid {
+/* --- Tarjetas de encargos/trabajos --- */
+
+/* Grid de encargos */
+#encargos .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
+  gap: 2rem; /* Espacio entre tarjetas */
+  margin-top: 2rem;
+  align-items: stretch; /* Todas las tarjetas se estiran a la misma altura */
 }
 
-.card {
-  background: var(--blanco);
+/* Tarjetas de encargos/trabajos */
+#encargos .card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blanco);
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: var(--trans);
+  height: 100%; /* fuerza que ocupe toda la altura del grid */
 }
 
-.card:hover {
+#encargos .card:hover {
   transform: translateY(-5px);
 }
 
-.card img,
-.card iframe {
+/* Imágenes dentro de las tarjetas */
+#encargos .card img {
   width: 100%;
-  height: 220px;
+  height: 220px; /* altura uniforme */
   object-fit: cover;
   display: block;
   border-bottom: 3px solid var(--azul);
 }
 
-.card-body {
+/* Cuerpo de la tarjeta */
+#encargos .card-body {
+  flex: 1; /* ocupa el espacio restante */
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
 }
 
-.card-body h3 {
+/* Títulos y párrafos */
+#encargos .card-body h3 {
   color: var(--azul-oscuro);
   margin-bottom: 0.5rem;
 }
 
-.card-body p {
+#encargos .card-body p {
   color: #555;
   font-size: 0.95rem;
+  margin-bottom: 1rem;
+  flex: 1; /* empuja el botón hacia abajo */
 }
 
 /* Botón */
-.btn {
-  display: inline-block;
-  margin-top: 0.5rem;
+#encargos .card-body .btn {
+  margin-top: auto; /* botón al final de la tarjeta */
   padding: 0.6rem 1rem;
-  background: var(--azul);
+  background-color: var(--azul);
   color: var(--blanco);
   border-radius: var(--radius);
   font-weight: 600;
+  text-decoration: none;
   transition: var(--trans);
 }
 
-.btn:hover {
-  background: var(--celeste);
+#encargos .card-body .btn:hover {
+  background-color: var(--celeste);
 }
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+  #encargos .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #encargos .grid {
+    grid-template-columns: 1fr; /* 1 columna en móvil */
+  }
+}
+
+/* --- Fin tarjetas de encargos --- */
 
 /* Grid para la sección Sitio Web */
 #sitio-web .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 20px;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-/* iframes */
-#sitio-web iframe {
-  width: 100%;
-  height: 300px; 
-  border: none;
-  border-radius: 8px;
-}
-
-/* Tarjetas específicas para la sección Sitio Web */
+/* Tarjetas de la sección Sitio Web */
 #sitio-web .card {
   background: var(--azul);   
   color: var(--blanco);            
   border-radius: var(--radius);
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: var(--trans);
+  height: auto; /* permite que el iframe ajuste su tamaño */
 }
 
 #sitio-web .card:hover {
@@ -185,24 +211,59 @@ nav a.active {
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
+/* Cuerpo de la tarjeta */
+#sitio-web .card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Títulos y párrafos */
 #sitio-web .card-body h3 {
-  color: var(--blanco); 
+  margin-bottom: 0.5rem;
 }
 
 #sitio-web .card-body p {
-  color: var(--gris); 
+  flex: 1; /* empuja el botón hacia abajo */
+  margin-bottom: 1rem;
 }
 
+/* Botón */
 #sitio-web .btn {
-  background: var(--azul-oscuro); 
+  align-self: flex-start;
+  padding: 0.6rem 1rem;
+  background-color: var(--azul-oscuro);
   color: var(--blanco);
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--trans);
 }
 
 #sitio-web .btn:hover {
-  background: var(--celeste); 
+  background-color: var(--celeste); 
 }
 
+/* Iframes */
+#sitio-web iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+  border-radius: var(--radius);
+}
 
+/* Responsive */
+@media screen and (max-width: 900px) {
+  #sitio-web .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #sitio-web .grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Footer */
 footer {
@@ -212,4 +273,3 @@ footer {
   padding: 1rem;
   margin-top: 2rem;
 }
-
