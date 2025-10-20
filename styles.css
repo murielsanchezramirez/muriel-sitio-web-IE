@@ -99,13 +99,13 @@ nav a.active {
 
 /* --- Tarjetas de encargos/trabajos --- */
 
-/* Grid de encargos */
+/* Grid de encargos: 3 columnas fijas */
 #encargos .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas fijas */
-  gap: 2rem; /* Espacio entre tarjetas */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 2rem; /* espacio entre tarjetas */
   margin-top: 2rem;
-  align-items: stretch; /* Todas las tarjetas se estiran a la misma altura */
+  align-items: stretch; /* igual altura */
 }
 
 /* Tarjetas de encargos/trabajos */
@@ -117,31 +117,26 @@ nav a.active {
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: var(--trans);
-  height: 100%; /* fuerza que ocupe toda la altura del grid */
+  height: 100%; /* fuerza que todas tengan la misma altura */
 }
 
-#encargos .card:hover {
-  transform: translateY(-5px);
-}
-
-/* Imágenes dentro de las tarjetas */
+/* Imágenes */
 #encargos .card img {
   width: 100%;
   height: 220px; /* altura uniforme */
   object-fit: cover;
-  display: block;
   border-bottom: 3px solid var(--azul);
 }
 
 /* Cuerpo de la tarjeta */
 #encargos .card-body {
-  flex: 1; /* ocupa el espacio restante */
+  flex: 1;
   display: flex;
   flex-direction: column;
   padding: 1rem;
 }
 
-/* Títulos y párrafos */
+/* Texto */
 #encargos .card-body h3 {
   color: var(--azul-oscuro);
   margin-bottom: 0.5rem;
@@ -150,13 +145,13 @@ nav a.active {
 #encargos .card-body p {
   color: #555;
   font-size: 0.95rem;
-  margin-bottom: 1rem;
   flex: 1; /* empuja el botón hacia abajo */
+  margin-bottom: 1rem;
 }
 
 /* Botón */
 #encargos .card-body .btn {
-  margin-top: auto; /* botón al final de la tarjeta */
+  margin-top: auto; /* botón al fondo */
   padding: 0.6rem 1rem;
   background-color: var(--azul);
   color: var(--blanco);
@@ -170,19 +165,18 @@ nav a.active {
   background-color: var(--celeste);
 }
 
-/* Responsive */
+/* Responsive: 2 columnas en tablet, 1 en móvil */
 @media screen and (max-width: 900px) {
   #encargos .grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 600px) {
   #encargos .grid {
-    grid-template-columns: 1fr; /* 1 columna en móvil */
+    grid-template-columns: 1fr;
   }
 }
-
 /* --- Fin tarjetas de encargos --- */
 
 /* Grid para la sección Sitio Web */
